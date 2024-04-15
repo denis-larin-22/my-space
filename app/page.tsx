@@ -29,7 +29,7 @@ export default function Home() {
               <p>3</p>
             </Link>
 
-            <Link href="/" className="relative h-fit w-fit bg-t-blue p-2 rounded-full flex items-center justify-center gap-1 text-white">
+            <Link href="/planner" className="relative h-fit w-fit bg-t-blue p-2 rounded-full flex items-center justify-center gap-1 text-white">
               {TasksIcon}
               <p>3</p>
             </Link>
