@@ -7,7 +7,7 @@ import { ILink } from "../lib/types/ui-types";
 export default function Sidebar() {
     const links: ILink[] = [
         { href: '/', text: 'Dashboard', target: '_parent' },
-        { href: '/', text: 'Planner', target: "_parent" },
+        { href: '/planner', text: 'Planner', target: "_parent" },
         { href: '/', text: 'Workouts', target: "_parent" },
         { href: '/', text: 'Ideas', target: "_parent" },
         { href: '/', text: 'Accounts', target: "_parent" },
