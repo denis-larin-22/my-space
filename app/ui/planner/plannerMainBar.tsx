@@ -11,7 +11,7 @@ export default function PlannerMainBar() {
     return (
         <Link
             href="/planner"
-            className="group relative inline-block col-span-3 row-span-3 bg-t-blue rounded-3xl p-5 sca text-white hover:ring-8 ring-offset-2 ring-t-blue ring-opacity-50 duration-150 active:scale-99"
+            className="group relative inline-block col-span-3 row-span-3 bg-t-blue rounded-3xl p-5 text-white hover:ring-8 ring-offset-2 ring-t-blue ring-opacity-50 duration-150 active:scale-99"
         >
             <div className="flex justify-between">
                 <h2 className="text-3xl font-medium">Today's plan:</h2>

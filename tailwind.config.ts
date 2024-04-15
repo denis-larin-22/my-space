@@ -12,7 +12,7 @@ const config: Config = {
         't-dark': '#101010',
         't-dark-text': '#262A41',
         't-gray': '#404852',
-        't-blue': '#32A7E2', //usual day
+        't-blue': '#32A7E2', //tasks
         't-purple': '#B548C6',
         't-orange': '#FF8700', //workout
         't-red': '#DC3434', //messages
@@ -20,6 +20,7 @@ const config: Config = {
       },
       scale: {
         '99': '0.99',
+        '102': '1.02',
       }
     },
   },
