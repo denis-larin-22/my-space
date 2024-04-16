@@ -6,8 +6,9 @@ import WorkoutMainBar from "./ui/workout/workoutMainBar";
 import icons from "./ui/common/icons";
 import { _getCurrentDate, _getCurrentTime } from "./lib/_utils";
 import Clock from "./ui/common/clock";
+import { getPlannerDayListFromFirestoreDB } from "./lib/firebase/planner";
 
-export default function Home() {
+export default async function Home() {
   const { tasksIcon, messagesIcon, chatGPTIcon } = icons;
   const TasksIcon = tasksIcon.getIcon("small");
   const MessagesIcon = messagesIcon.getIcon("small");

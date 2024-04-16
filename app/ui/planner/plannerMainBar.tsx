@@ -1,8 +1,9 @@
 import Link from "next/link";
 import icons from "../common/icons"
 import ProgressBar from "../progress-bar";
+import { getPlannerDayListFromFirestoreDB } from "@/app/lib/firebase/planner";
 
-export default function PlannerMainBar() {
+export default async function PlannerMainBar() {
     const { tasksIcon: { getIcon } } = icons;
     const TaskIcon = getIcon("large", 'absolute bottom-3 right-3 group-hover:scale-125 duration-150');
     const progress = 30; //PROPS
