@@ -25,9 +25,9 @@ export const getPlannerDayListFromFirestoreDB = async (date: string): Promise<Ar
 }
 
 // post new task
-export const postNewTaskToFirestoreDB = async (taskObj: ITaskItem, id: string) => {
+export const postNewTaskToFirestoreDB = async (taskObj: ITaskItem) => {
     try {
-        const result = await setDoc(doc(db, taskObj.date, id), taskObj);
+        const result = await setDoc(doc(db, taskObj.date, taskObj.id), taskObj);
         console.log("New task successfully added to Firestore", result);
     } catch (error: any) {
         console.error("Error adding new task to FirestoreDB:", error.message);

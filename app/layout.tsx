@@ -17,9 +17,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${poppins.className} h-screen w-screen p-5 bg-t-dark flex`}>
+      <body className={`${poppins.className} h-screen w-screen p-5 bg-t-dark flex flex-row overflow-hidden`}>
         <Sidebar />
-        <div className="h-full w-full bg-white rounded-3xl py-20 px-24">
+        <div className="flex-grow overflow-y-auto overflow-x-hidden bg-white rounded-3xl p-20">
           {children}
         </div>
       </body>

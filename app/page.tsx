@@ -2,11 +2,10 @@ import Link from "next/link";
 import Image from "next/image";
 import PlannerMainBar from "./ui/planner/plannerMainBar";
 import ReminderMainBar from "./ui/reminder/reminderMainBar";
-import WorkoutMainBar from "./ui/workout/workoutMainBar";
 import icons from "./ui/common/icons";
 import { _getCurrentDate, _getCurrentTime } from "./lib/_utils";
+import WorkoutMainBar from "./ui/workouts/workoutMainBar";
 import Clock from "./ui/common/clock";
-import { getPlannerDayListFromFirestoreDB } from "./lib/firebase/planner";
 
 export default async function Home() {
   const { tasksIcon, messagesIcon, chatGPTIcon } = icons;

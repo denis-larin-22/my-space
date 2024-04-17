@@ -1,3 +1,4 @@
+import Link from "next/link";
 import icons from "../common/icons";
 
 export default function WorkoutMainBar() {
@@ -37,7 +38,10 @@ export default function WorkoutMainBar() {
     ]; //PROPS
 
     return (
-        <section className="group relative h-full flex flex-col justify-between col-span-1 row-span-3 rounded-3xl bg-t-orange bg-opacity-80 hover:ring-8 ring-offset-2 ring-t-orange ring-opacity-50 duration-150">
+        <Link
+            href="/workouts"
+            className="group relative h-full inline-flex flex-col justify-between col-span-1 row-span-3 rounded-3xl bg-t-orange bg-opacity-80 hover:ring-8 ring-offset-2 ring-t-orange ring-opacity-50 duration-150"
+        >
             <div className="p-6 text-black flex flex-col justify-between">
                 <p className="text-2xl">Workout day 💪</p>
                 <p className="text-xl mt-3">Грудь/бицепс</p>
@@ -54,9 +58,8 @@ export default function WorkoutMainBar() {
                     ))}
                 </ul>
 
-
                 {WorkoutIcon}
             </div>
-        </section>
+        </Link>
     )
 }

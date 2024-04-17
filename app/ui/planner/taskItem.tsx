@@ -7,8 +7,8 @@ interface IProps {
 export default function TaskItem({ task }: IProps) {
     return (
         <>
-            <p>✍ {task.name}</p>
-            <p className="text-sm opacity-80">{task.desk}</p>
+            <p className="text-lg font-bold border-b-2 border-t-gray/50 pb-2 mb-2">✍ {task.name}</p>
+            <p className="text-base font-semibold opacity-80">{task.desk}</p>
             {task.isDone && <p className="text-2xl absolute top-1 right-1">✔</p>}
         </>
     )

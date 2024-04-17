@@ -2,12 +2,15 @@ import Link from "next/link";
 import icons from "../common/icons"
 import ProgressBar from "../progress-bar";
 import { getPlannerDayListFromFirestoreDB } from "@/app/lib/firebase/planner";
+import { _getCurrentDateByNumber } from "@/app/lib/_utils/_getCurrentDateByNumber";
 
 export default async function PlannerMainBar() {
     const { tasksIcon: { getIcon } } = icons;
     const TaskIcon = getIcon("large", 'absolute bottom-3 right-3 group-hover:scale-125 duration-150');
     const progress = 30; //PROPS
-    const tasks = [{ id: '24324', name: 'Купить продукты', desk: 'Молоко, хлеб, мясо, яйца' }, { id: '453534', name: 'Работа', desk: '' }, { id: '456756634', name: 'Проэкт', desk: 'пофиксить баг с окном' }, { id: '54678', name: 'Приготовить', desk: 'потушить мясо' }]; //PROPS
+    const date = _getCurrentDateByNumber();
+    const tasksList = await getPlannerDayListFromFirestoreDB(date);
+    // const tasksList = await getPlannerDayListFromFirestoreDB("2024-04-16");
 
     return (
         <Link
@@ -22,7 +25,7 @@ export default async function PlannerMainBar() {
             {TaskIcon}
 
             <ul className="pl-5 mt-4 inline-flex flex-col gap-3 text-t-gray font-semibold">
-                {tasks.map((task) => (
+                {tasksList.map((task) => (
                     <li
                         key={task.id}
                         className="p-2 text-lg after:block after:h-[3px] after:w-36 after:bg-t-dark-text after:bg-opacity-50 after:rounded-2xl after:mt-1 hover:bg-white hover:bg-opacity-50 hover:rounded-2xl cursor-pointer all duration-150 hover:pl-3 hover:after:w-10"
