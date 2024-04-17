@@ -1,5 +1,3 @@
-
-
 import { _getCurrentDateByNumber } from "@/app/lib/_utils/_getCurrentDateByNumber";
 import { _getId } from "@/app/lib/_utils/_getId";
 import { createNewTask } from "@/app/lib/crud/planner";
@@ -29,7 +27,6 @@ export default function NewTaskForm() {
                     name="date"
                     type="date"
                     required
-                    defaultValue={_getCurrentDateByNumber()}
                     className={`max-w-56 text-t-dark-text/50 focus:text-t-dark-text text-base ${inputsStyles}`}
                 />
                 <button

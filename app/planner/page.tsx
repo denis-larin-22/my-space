@@ -1,18 +1,13 @@
-import Link from "next/link";
 import { _getCurrentDate } from "../lib/_utils";
-import TaskList from "../ui/planner/taskList";
+import { _getCurrentDateByNumber } from "../lib/_utils/_getCurrentDateByNumber";
+import PlannerTasks from "../ui/planner/plannerTasks";
 
 export default function Planner() {
-    const date = _getCurrentDate();
-
     return (
         <section className="relative">
-            <div className="bg-t-blue p-5 mb-3 rounded-2xl text-white flex flex-col">
-                <h2 className="text-3xl font-bold">Planner</h2>
-                <p className="font-semibold text-t-gray">{date}</p>
-            </div>
+            <h2 className="inline-block w-full bg-t-blue p-5 rounded-2xl rounded-bl-none text-white text-3xl font-bold">Planner</h2>
 
-            <TaskList />
+            <PlannerTasks />
         </section>
     )
 }

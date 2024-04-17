@@ -14,6 +14,7 @@ export const getPlannerDayListFromFirestoreDB = async (date: string): Promise<Ar
             name: doc.data().name,
             desk: doc.data().desk,
             date: doc.data().date,
+            timeСreation: doc.data().timeСreation,
             isDone: doc.data().isDone
         }));
 
