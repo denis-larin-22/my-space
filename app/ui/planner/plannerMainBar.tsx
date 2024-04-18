@@ -7,10 +7,9 @@ import { _getCurrentDateByNumber } from "@/app/lib/_utils/_getCurrentDateByNumbe
 export default async function PlannerMainBar() {
     const { tasksIcon: { getIcon } } = icons;
     const TaskIcon = getIcon("large", 'absolute bottom-3 right-3 group-hover:scale-125 duration-150');
-    const progress = 30; //PROPS
-    const date = _getCurrentDateByNumber();
-    const tasksList = await getPlannerDayListFromFirestoreDB(date);
-    // const tasksList = await getPlannerDayListFromFirestoreDB("2024-04-16");
+    const tasksList = await getPlannerDayListFromFirestoreDB(_getCurrentDateByNumber());
+    const doneTask = tasksList.filter((task) => task.isDone);
+    const progressValue = Math.trunc((doneTask.length / tasksList.length) * 100);
 
     return (
         <Link
@@ -19,21 +18,22 @@ export default async function PlannerMainBar() {
         >
             <div className="flex justify-between">
                 <h2 className="text-3xl font-medium">Today's plan:</h2>
-                <ProgressBar progressValue={progress} />
+                <ProgressBar progressValue={progressValue} />
             </div>
 
             {TaskIcon}
 
-            <ul className="pl-5 mt-4 inline-flex flex-col gap-3 text-t-gray font-semibold">
-                {tasksList.map((task) => (
+            <ul className="pl-5 mt-4 inline-flex flex-col gap-3 text-t-gray font-semibold overflow-hidden">
+                {tasksList.splice(0, 5).map((task) => (
                     <li
                         key={task.id}
-                        className="p-2 text-lg after:block after:h-[3px] after:w-36 after:bg-t-dark-text after:bg-opacity-50 after:rounded-2xl after:mt-1 hover:bg-white hover:bg-opacity-50 hover:rounded-2xl cursor-pointer all duration-150 hover:pl-3 hover:after:w-10"
+                        className="p-2 text-lg after:block after:h-[3px] after:w-36 after:bg-t-dark-text after:bg-opacity-50 after:rounded-2xl after:mt-1 hover:bg-white hover:bg-opacity-50 hover:rounded-2xl cursor-pointer all duration-150 hover:after:w-10"
                     >
                         <p className="">✍ {task.name}</p>
                         <p className="text-sm opacity-80">{task.desk}</p>
                     </li>
                 ))}
+                <p className="text-right">Click to see all</p>
             </ul>
         </Link>
     )
