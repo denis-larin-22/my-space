@@ -6,7 +6,7 @@ type TimerType = 'Work' | 'Break' | 'Big break';
 
 export default function PomodoroTimer() {
     const [processButton, setProcessButton] = useState<ButtonState>('Start');
-    const [timeLeft, setTimeLeft] = useState<number>(25 * 60); // 0.05 hours in seconds (25 minutes)
+    const [timeLeft, setTimeLeft] = useState<number>(25 * 60); // seconds (25 minutes)
     const [isRunning, setIsRunning] = useState<boolean>(false);
     const [timerType, setTimerType] = useState<TimerType>('Break');
     const [cycleCount, setCycleCount] = useState<number>(0);
