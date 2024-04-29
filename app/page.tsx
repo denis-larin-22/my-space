@@ -4,7 +4,6 @@ import PlannerMainBar from "./ui/planner/plannerMainBar";
 import ReminderMainBar from "./ui/reminder/reminderMainBar";
 import icons from "./ui/common/icons";
 import { _getCurrentDate, _getCurrentTime } from "./lib/_utils";
-import WorkoutMainBar from "./ui/workouts/workoutMainBar";
 import Clock from "./ui/common/clock";
 
 export default async function Home() {
@@ -56,8 +55,6 @@ export default async function Home() {
       <PlannerMainBar />
       {/* reminder */}
       <ReminderMainBar />
-      {/* day type */}
-      <WorkoutMainBar />
     </main >
   );
 }

@@ -18,7 +18,7 @@ export default async function PlannerMainBar() {
         >
             <div className="flex justify-between">
                 <h2 className="text-3xl font-medium">Today's plan:</h2>
-                <ProgressBar progressValue={progressValue} />
+                {isNaN(progressValue) ? null : <ProgressBar progressValue={progressValue} />}
             </div>
 
             {TaskIcon}
@@ -33,7 +33,7 @@ export default async function PlannerMainBar() {
                         <p className="text-sm opacity-80">{task.desk}</p>
                     </li>
                 ))}
-                <p className="text-right">Click to see all</p>
+                <p className="text-right">Click to go to page</p>
             </ul>
         </Link>
     )

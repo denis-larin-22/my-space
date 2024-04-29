@@ -4,7 +4,7 @@ interface IProps {
     task: ITaskItem
 }
 
-export default function TaskItem({ task }: IProps) {
+export default function PlannerTaskItem({ task }: IProps) {
     return (
         <>
             <p className="text-lg font-bold border-b-2 border-t-gray/50 pb-2 mb-2">✍ {task.name}</p>

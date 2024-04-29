@@ -1,4 +1,4 @@
-import { collection, doc, getDocs, setDoc } from "firebase/firestore";
+import { collection, deleteDoc, doc, getDoc, getDocs, setDoc } from "firebase/firestore";
 import { db } from "./firebase-config";
 import { ITaskItem } from "../types/planner-types";
 
@@ -23,7 +23,19 @@ export const getPlannerDayListFromFirestoreDB = async (date: string): Promise<Ar
         console.error("Error when retrieving data from DB:", error);
         throw error;
     }
-}
+};
+
+// get task by date and id
+export const getPlannerTaskFromFirestoreDB = async (date: string, id: string): Promise<ITaskItem> => {
+    try {
+        const docRef = doc(db, date, id);
+        const docSnap = await getDoc(docRef);
+        return docSnap.data() as ITaskItem;
+    } catch (error) {
+        console.error("Error when retrieving data from storage:", error);
+        throw error;
+    }
+};
 
 // post new task
 export const postNewTaskToFirestoreDB = async (taskObj: ITaskItem) => {
@@ -34,4 +46,10 @@ export const postNewTaskToFirestoreDB = async (taskObj: ITaskItem) => {
         console.error("Error adding new task to FirestoreDB:", error.message);
         throw error;
     }
+}
+
+// delete task
+export const deleteTaskFromFirestoreDB = async (date: string, id: string) => {
+    const userDoc = doc(db, date, id)
+    await deleteDoc(userDoc);
 }

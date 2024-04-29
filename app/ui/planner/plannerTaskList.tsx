@@ -1,4 +1,4 @@
-import TaskItem from "./taskItem";
+import PlannerTaskItem from "./plannerTaskItem";
 import { _getCurrentDateByNumber } from "@/app/lib/_utils/_getCurrentDateByNumber";
 import ProgressBar from "../progress-bar";
 import Link from "next/link";
@@ -8,7 +8,7 @@ interface IProps {
     taskList: ITaskItem[] | [] | 'loading';
 }
 
-export default function TaskList({ taskList }: IProps) {
+export default function PlannerTaskList({ taskList }: IProps) {
     if (taskList === 'loading') {
         return (
             <div className="w-1/2 h-full flex flex-row gap-2">
@@ -49,16 +49,17 @@ export default function TaskList({ taskList }: IProps) {
                     <ProgressBar progressValue={progressValue} theme="blue" />
                 </div>
 
-                <ul className="p-5 pt-3 flex flex-col gap-4">
+                <div className="p-5 pt-3 flex flex-col gap-4">
                     {taskList.map((task) => (
-                        <li
+                        <Link
                             key={task.id}
+                            href={`/planner/${task.id}/task-item`}
                             className={`relative h-fit p-2 text-t-dark-text ${task.isDone ? 'bg-t-blue/50 brightness-75' : 'bg-t-blue'} rounded-2xl border-2 ${task.isDone ? 'border-t-blue' : 'border-transparent'} hover:ring-2 ring-offset-2 ring-t-blue duration-150 cursor-pointer`}
                         >
-                            <TaskItem task={task} />
-                        </li>
+                            <PlannerTaskItem task={task} />
+                        </Link>
                     ))}
-                </ul>
+                </div>
             </>
         )
     }

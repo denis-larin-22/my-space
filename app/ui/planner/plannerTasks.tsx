@@ -1,7 +1,7 @@
 'use client'
 
 import { useEffect, useState } from "react";
-import TaskList from "./taskList";
+import PlannerTaskList from "./plannerTaskList";
 import { _getCurrentDateByNumber } from "@/app/lib/_utils/_getCurrentDateByNumber";
 import { ITaskItem } from "@/app/lib/types/planner-types";
 import { getPlannerDayListFromFirestoreDB } from "@/app/lib/firebase/planner";
@@ -45,7 +45,7 @@ export default function PlannerTasks() {
                 </Link>
             </div>
 
-            <TaskList taskList={taskList} />
+            <PlannerTaskList taskList={taskList} />
         </>
     )
 }

@@ -1,4 +1,4 @@
-export const _getId = (): string => {
+export function _getId() {
     const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
 
     let randomId = '';
@@ -11,3 +11,7 @@ export const _getId = (): string => {
 
     return randomId;
 };
+
+export function _getIdWithDate(date: string) {
+    return `${date}!${_getId()}`
+}
