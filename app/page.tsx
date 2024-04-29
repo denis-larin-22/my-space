@@ -2,7 +2,6 @@ import Link from "next/link";
 import Image from "next/image";
 import PlannerMainBar from "./ui/planner/plannerMainBar";
 import ReminderMainBar from "./ui/reminder/reminderMainBar";
-import WorkoutMainBar from "./ui/workout/workoutMainBar";
 import icons from "./ui/common/icons";
 import { _getCurrentDate, _getCurrentTime } from "./lib/_utils";
 import Clock from "./ui/common/clock";
@@ -56,8 +55,6 @@ export default function Home() {
       <PlannerMainBar />
       {/* reminder */}
       <ReminderMainBar />
-      {/* day type */}
-      <WorkoutMainBar />
     </main >
   );
 }

@@ -8,7 +8,6 @@ export default function Sidebar() {
     const links: ILink[] = [
         { href: '/', text: 'Dashboard', target: '_parent' },
         { href: '/', text: 'Planner', target: "_parent" },
-        { href: '/', text: 'Workouts', target: "_parent" },
         { href: '/', text: 'Ideas', target: "_parent" },
         { href: '/', text: 'Accounts', target: "_parent" },
         { href: 'https://denis-larin-22.github.io/my-blog/', text: 'Blog', target: "_blank" },
