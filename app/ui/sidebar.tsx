@@ -9,10 +9,9 @@ export default function Sidebar() {
         { href: '/', text: 'Dashboard', target: '_parent' },
         { href: '/planner', text: 'Planner', target: "_parent" },
         { href: '/', text: 'Ideas', target: "_parent" },
-        { href: '/', text: 'Accounts', target: "_parent" },
+        { href: '/pomododro', text: 'Pomodoro', target: "_blank" },
         { href: 'https://denis-larin-22.github.io/my-blog/', text: 'Blog', target: "_blank" },
         { href: '/links', text: 'Workspace', target: "_parent" } //все мои ссылки на ресурсы с которыми я чаще всего работаю (ссылка на lofigirl music)
-        // Вощможно помодоро таймер
     ];
 
     return (
@@ -43,6 +42,7 @@ export default function Sidebar() {
                     <Link
                         key={index}
                         href={link.href}
+                        target={link.target}
                         className="hover:text-white hover:pl-1 all duration-150"
                     >
                         {link.text}
