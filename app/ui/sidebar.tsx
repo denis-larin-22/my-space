@@ -7,7 +7,7 @@ import { ILink } from "../lib/types/ui-types";
 export default function Sidebar() {
     const links: ILink[] = [
         { href: '/', text: 'Dashboard', target: '_parent' },
-        { href: '/', text: 'Planner', target: "_parent" },
+        { href: '/planner', text: 'Planner', target: "_parent" },
         { href: '/', text: 'Ideas', target: "_parent" },
         { href: '/', text: 'Accounts', target: "_parent" },
         { href: 'https://denis-larin-22.github.io/my-blog/', text: 'Blog', target: "_blank" },
@@ -16,7 +16,7 @@ export default function Sidebar() {
     ];
 
     return (
-        <aside className="h-full w-96 py-12 px-16 text-white font-semibold">
+        <aside className="h-full w-96 py-12 px-16 text-white font-semibold flex-shrink-0">
             <div className="">
                 <div className="relative w-fit mb-5">
                     <Link

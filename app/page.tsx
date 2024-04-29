@@ -6,7 +6,7 @@ import icons from "./ui/common/icons";
 import { _getCurrentDate, _getCurrentTime } from "./lib/_utils";
 import Clock from "./ui/common/clock";
 
-export default function Home() {
+export default async function Home() {
   const { tasksIcon, messagesIcon, chatGPTIcon } = icons;
   const TasksIcon = tasksIcon.getIcon("small");
   const MessagesIcon = messagesIcon.getIcon("small");
@@ -28,7 +28,7 @@ export default function Home() {
               <p>3</p>
             </Link>
 
-            <Link href="/" className="relative h-fit w-fit bg-t-blue p-2 rounded-full flex items-center justify-center gap-1 text-white">
+            <Link href="/planner" className="relative h-fit w-fit bg-t-blue p-2 rounded-full flex items-center justify-center gap-1 text-white">
               {TasksIcon}
               <p>3</p>
             </Link>
